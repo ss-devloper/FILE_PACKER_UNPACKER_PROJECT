@@ -1,11 +1,12 @@
 // acceppt file name from user & save in FileName
-//check is file exist ,if not create it
+// if exist : delete that file 
 
 import java.io.File;
 import java.io.FileInputStream;
+import java.text.ListFormat.Style;
 import java.util.Scanner;
 
-class program3 
+class program4
 {
 
     public static void main(String A[]) throws Exception
@@ -23,22 +24,15 @@ class program3
         if(fobj.exists())
         {
             System.out.println("File is alredy present");
+
+            fobj.delete();
+
+            System.out.println("File gets deleted");
         }
         else 
         {
-            bRet =fobj.createNewFile();
-
-             if(bRet == true)
-                {
-                    System.out.println("File gets successfully created");
-                }
-             else 
-                {
-                    System .out.println("unable to creaye file");
-                }
-
+            System.out.println("There is no such file");
         }
-        
         
         sobj.close();
 
